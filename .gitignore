@@ -6,3 +6,4 @@ venv
 runs/
 data/cc3m
 .venv
+*.jpg
