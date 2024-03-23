@@ -7,3 +7,4 @@ runs/
 data/cc3m
 .venv
 *.jpg
+scripts/preprocess_sd_embeddings_local.py
