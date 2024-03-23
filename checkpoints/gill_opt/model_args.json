@@ -1,7 +1,7 @@
 {
-    "opt_version": "facebook/opt-125m",
+    "opt_version": "facebook/opt-6.7b",
     "freeze_lm": true,
-    "visual_encoder": "openai/clip-vit-base-patch16",
+    "visual_encoder": "openai/clip-vit-large-patch14",
     "freeze_vm": true,
     "n_visual_tokens": 4,
     "ret_emb_dim": 256,
