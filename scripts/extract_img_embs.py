@@ -49,21 +49,21 @@ def extract_embeddings_for_urls(image_urls: str, emb_output_path: str, device: s
 
 trainingImageDir = "/content/gdrive/MyDrive/cache/mscoco_small/training"
 validationImageDir = "/content/gdrive/MyDrive/cache/mscoco_small/validation"
+# trainingImageDir = "./training"
 
 if __name__ == "__main__":
     image_urls = []
 
-    for file in os.listdir(trainingImageDir):
+    for file in [f for f in os.listdir(trainingImageDir) if os.path.isfile(os.path.join(trainingImageDir, f))]:
         filename = os.fsdecode(file)
         if filename.endswith(".jpg"):
             image_urls.append(trainingImageDir + "/" + filename)
     
-    for file in os.listdir(validationImageDir):
+    for file in [f for f in os.listdir(validationImageDir) if os.path.isfile(os.path.join(validationImageDir, f))]:
         filename = os.fsdecode(file)
         if filename.endswith(".jpg"):
             image_urls.append(validationImageDir + "/" + filename)
 
-    print(f"khaidq imageUrls {image_urls}")
     # image_urls = ['https://farm3.staticflickr.com/2045/5797966927_e82231c628_z.jpg'] # TODO: Replace with image urls, or image paths
     if image_urls == []:
         raise ValueError("Please replace `image_urls` with a list of image urls.")
