@@ -4,6 +4,10 @@ Example usage:
     python extract_img_embs.py
 """
 import torch
+import sys
+
+sys.path.append('.')
+
 from gill import models, utils
 
 from PIL import Image
