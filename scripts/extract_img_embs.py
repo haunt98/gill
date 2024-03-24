@@ -22,7 +22,7 @@ def extract_embeddings_for_urls(image_urls: str, emb_output_path: str, device: s
     model = models.load_gill("checkpoints/gill_opt/", load_ret_embs=False)
     model.eval()
 
-    visual_encoder = "openai/clip-vit-base-patch16"
+    visual_encoder = "openai/clip-vit-large-patch14"
     feature_extractor = utils.get_feature_extractor_for_model(
         visual_encoder, train=False
     )
