@@ -59,7 +59,7 @@ if __name__ == "__main__":
         lines = file.read().split(",")
 
         for line in lines:
-            image_urls.append(line.replace('[', '').replace(']', '').replace("'", ''))
+            image_urls.append(line.replace('[', '').replace(']', '').replace("'", '').replace("\n", ""))
 
     # for file in [f for f in os.listdir(trainingImageDir) if os.path.isfile(os.path.join(trainingImageDir, f))]:
     #     filename = os.fsdecode(file)
