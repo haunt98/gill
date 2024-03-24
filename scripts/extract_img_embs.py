@@ -61,7 +61,7 @@ if __name__ == "__main__":
     for file in os.listdir(validationImageDir):
         filename = os.fsdecode(file)
         if filename.endswith(".jpg"):
-            image_urls.append(trainingImageDir + "/" + filename)
+            image_urls.append(validationImageDir + "/" + filename)
 
     print(f"khaidq imageUrls {image_urls}")
     # image_urls = ['https://farm3.staticflickr.com/2045/5797966927_e82231c628_z.jpg'] # TODO: Replace with image urls, or image paths
