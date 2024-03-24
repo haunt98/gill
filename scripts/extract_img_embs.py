@@ -47,8 +47,24 @@ def extract_embeddings_for_urls(image_urls: str, emb_output_path: str, device: s
         pkl.dump(output_data, f)
 
 
+trainingImageDir = "/content/gdrive/MyDrive/cache/mscoco_small/training"
+validationImageDir = "/content/gdrive/MyDrive/cache/mscoco_small/validation"
+
 if __name__ == "__main__":
-    image_urls = ['https://farm3.staticflickr.com/2045/5797966927_e82231c628_z.jpg']  # TODO: Replace with image urls, or image paths
+    image_urls = []
+
+    for file in os.listdir(trainingImageDir):
+        filename = os.fsdecode(file)
+        if filename.endswith(".jpg"):
+            image_urls.append(trainingImageDir + filename)
+    
+    for file in os.listdir(validationImageDir):
+        filename = os.fsdecode(file)
+        if filename.endswith(".jpg"):
+            image_urls.append(trainingImageDir + filename)
+
+    print(f"khaidq imageUrls {image_urls}")
+    # image_urls = ['https://farm3.staticflickr.com/2045/5797966927_e82231c628_z.jpg'] # TODO: Replace with image urls, or image paths
     if image_urls == []:
         raise ValueError("Please replace `image_urls` with a list of image urls.")
     extract_embeddings_for_urls(image_urls, "cc3m_embeddings.pkl")
