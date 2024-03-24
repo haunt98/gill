@@ -21,8 +21,8 @@ from gill import layers
 class GILLArgs:
   freeze_lm: bool = True
   freeze_vm: bool = True
-  opt_version: str = 'facebook/opt-6.7b'
-  visual_encoder: str = 'openai/clip-vit-large-patch14'
+  opt_version: str = 'facebook/opt-125m'
+  visual_encoder: str = 'openai/clip-vit-base-patch16'
   n_visual_tokens: int = 1
   task: str = 'captioning'
   ret_emb_dim: Optional[int] = 256
