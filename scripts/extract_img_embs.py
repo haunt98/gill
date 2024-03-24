@@ -59,7 +59,7 @@ if __name__ == "__main__":
         lines = file.read().split(",")
 
         for line in lines:
-            image_urls.append(line.replace('[', '').replace(']', ''))
+            image_urls.append(line.replace('[', '').replace(']', '').replace("'", ''))
 
     # for file in [f for f in os.listdir(trainingImageDir) if os.path.isfile(os.path.join(trainingImageDir, f))]:
     #     filename = os.fsdecode(file)
@@ -72,6 +72,7 @@ if __name__ == "__main__":
     #         image_urls.append(validationImageDir + "/" + filename)
 
     # image_urls = ['https://farm3.staticflickr.com/2045/5797966927_e82231c628_z.jpg'] # TODO: Replace with image urls, or image paths
+
     if image_urls == []:
         raise ValueError("Please replace `image_urls` with a list of image urls.")
     extract_embeddings_for_urls(image_urls, "cc3m_embeddings.pkl")
