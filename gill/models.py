@@ -22,7 +22,7 @@ class GILLArgs:
   freeze_lm: bool = True
   freeze_vm: bool = True
   opt_version: str = 'facebook/opt-125m'
-  visual_encoder: str = 'openai/clip-vit-base-patch16'
+  visual_encoder: str = 'openai/clip-vit-large-patch14'
   n_visual_tokens: int = 1
   task: str = 'captioning'
   ret_emb_dim: Optional[int] = 256
