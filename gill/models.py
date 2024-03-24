@@ -557,7 +557,7 @@ class GILL(nn.Module):
           nn.Linear(4096, 2),
       ])
       mlp_checkpoint = torch.load(decision_model_path)
-      self.decision_model.load_state_dict(mlp_checkpoint['state_dict'], strict=True)
+      self.decision_model.load_state_dict(mlp_checkpoint['state_dict'], strict=False)
       self.decision_model.eval()
 
   def __call__(self, images: Tensor, tgt_tokens: Optional[Tensor] = None, caption_len: Optional[Tensor] = None,
