@@ -694,8 +694,8 @@ class GILL(nn.Module):
 
             # Make decision with MLP.
             if self.decision_model is not None:
-              decision_emb = raw_emb[:, 0, :]  # (1, 4096)
-              assert decision_emb.shape[1] == 4096, decision_emb.shape
+              decision_emb = raw_emb[:, 0, :]  # (1, 768)
+              assert decision_emb.shape[1] == 768, decision_emb.shape
               decision_logits = self.decision_model(decision_emb)
               probs = decision_logits.softmax(dim=-1).cpu().float().numpy().tolist()
               image_outputs['decision'] = [self.idx2dec[decision_logits.argmax().item()]] + probs
