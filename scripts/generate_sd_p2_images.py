@@ -23,7 +23,7 @@ if __name__ == "__main__":
     pipe = pipe.to("cuda")
     # NOTE: You may have to uncomment this line to override the safety checker
     # to avoid getting empty images for certain prompts.
-    # pipe.safety_checker = lambda images, clip_input: (images, False)
+    pipe.safety_checker = lambda images, clip_input: (images, False)
 
     # Load PartiPrompts.
     with open(p2_fn, 'r') as f:
